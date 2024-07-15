@@ -17,7 +17,7 @@ const connectors = connectorsForWallets(
   ],
   {
     // Name of the application
-    appName: "Alkimiya Production",
+    appName: "Production",
 
     // Project ID for WalletConnect, fetched from environment variables
     projectId: `${process.env.NEXT_PUBLIC_WC_PROJECT_ID}`,

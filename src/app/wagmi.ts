@@ -28,7 +28,12 @@ const connectors = connectorsForWallets(
 export const config = createConfig({
   connectors,
   // Array of blockchain networks (chains) the application will support
-  chains: [mainnet, foundry, sepolia],
+  chains:
+    process.env.NODE_ENV === "development"
+      ? [mainnet, foundry, sepolia]
+      : process.env.NEXT_PUBLIC_VERCEL_APP === "staging"
+      ? [sepolia]
+      : [mainnet],
 
   // Enable server-side rendering (SSR)
   ssr: true,
